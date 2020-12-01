@@ -1,34 +1,39 @@
 class Cat:
     def __init__(self, name=""):
-        self.name = name
-        self.sex = ""
-        self.age = 0
+        self.__name = name
+        self.__sex = ""
+        self.__age = 0
     
-    def get_name(self):
-        return self.name
+    @property
+    def name(self):
+        return self.__name
 
-    def get_sex(self):
-        return self.sex
+    @property
+    def sex(self):
+        return self.__sex
 
-    def set_sex(self, sex):
-        if -1 < sex < 2:
-            self.sex = sex
+    @sex.setter
+    def sex(self, sex):
+        if sex in range(0, 2):
+            self.__sex = sex
         else:
-            print('Неверный пол')
+            print(f'Неверный пол: "{sex}""')
 
-    def get_age(self):
-        return self.age
+    @property
+    def age(self):
+        return self.__age
 
-    def set_age(self, age):
+    @age.setter
+    def age(self, age):
         if age in range(0, 100):
-            self.age = age
+            self.__age = age
         else:
-            print('Неверный возраст')
+            print(f'Неверный возраст: "{age}"')
     
-    def sexLogicalToDisplay(self):
-        if self.get_sex() == 0:
+    def sex_logical_to_display(self):
+        if self.__sex == 0:
             sex = 'девочка'
-        elif self.get_sex() == 1:
+        elif self.__sex == 1:
             sex = 'мальчик'
         else:
             sex = 'пол не указан'
@@ -36,4 +41,4 @@ class Cat:
 
     def display_info(self):
         
-        print(f'Имя: {self.get_name()}, Пол: {self.sexLogicalToDisplay()}, Возраст: {self.get_age()}')
+        print(f'Имя: {self.__name}, Пол: {self.sex_logical_to_display()}, Возраст: {self.__age}')

@@ -2,15 +2,15 @@ from ClassCat import Cat
 
 print(chr(10))
 
-cat1 = Cat('Баррон')
-cat1.set_age(2)
-cat1.set_sex(1)
-cat1.display_info()
+cat_1 = Cat('Баррон')
+cat_1.age = 2
+cat_1.sex = 2
+cat_1.display_info()
 
-cat2 = Cat('Сэм')
-cat2.set_age(2)
-cat2.set_sex(1)
-cat2.display_info()
+cat_2 = Cat('Сэм')
+cat_2.age = 2
+cat_2.sex = 1
+cat_2.display_info()
 
 print(chr(10))
 
